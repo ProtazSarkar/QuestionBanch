@@ -2,55 +2,29 @@
 <html>
 <head>
     <title>Question Input</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2>Add Questions</h2>
+<div class="container">
+    <h2>Add Questions</h2>
 
-<input type="text" id="questionBox" placeholder="Enter question">
-<button onclick="addQuestion()">Add</button>
+    <div class="input-group">
+        <input type="text" id="questionBox" placeholder="Enter your question here...">
+        <button class="btn-add" onclick="addQuestion()">Add</button>
+    </div>
 
-<br><br>
-<button onclick="sendAll()">Send All to Server</button>
+    <div class="actions">
+        <button class="btn-send" onclick="sendAll()">Send All to Server</button>
+    </div>
 
-<h3>Preview:</h3>
-<ul id="preview"></ul>
+    <div class="preview-section">
+        <h3>Preview</h3>
+        <ul id="preview"></ul>
+    </div>
+</div>
 
-<script>
-let questions = [];   // stores all questions
-
-function addQuestion(){
-    let q = document.getElementById("questionBox").value;
-
-    if(q.trim() === "") return;
-
-    questions.push(q);
-
-    // show preview
-    let li = document.createElement("li");
-    li.textContent = q;
-    document.getElementById("preview").appendChild(li);
-
-    document.getElementById("questionBox").value="";
-}
-
-function sendAll(){
-    fetch("/", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            questions: questions
-        })
-    })
-    .then(res => res.json())
-    .then(data => {
-        alert("Server response: " + data.message);
-    })
-    .catch(err => console.log(err));
-}
-</script>
+<script src="index.js"></script>
 
 </body>
 </html>
