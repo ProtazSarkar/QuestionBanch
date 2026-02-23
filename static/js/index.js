@@ -17,7 +17,7 @@ function addQuestion(){
 
 function sendAll(){
 
-    fetch("/", {
+    fetch("/generate", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

@@ -1,0 +1,15 @@
+{
+  "script": "createPaper.py",
+  "templates": {
+    "questions": {
+      "basic": "question.tex"
+    },
+    "headers": {
+      "basic": "header.tex"
+    }
+  },
+  "tags": {
+    "question": "\\question",
+    "header": "\\header"
+  }
+}
