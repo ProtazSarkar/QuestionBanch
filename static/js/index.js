@@ -17,6 +17,11 @@ function addQuestion(){
 
 function sendAll(){
 
+    if (questions.length === 0) {
+        alert("Add at least one question.");
+        return;
+    }
+
     fetch("/generate", {
         method: "POST",
         headers: {
@@ -26,9 +31,24 @@ function sendAll(){
             questions: questions
         })
     })
-    .then(res => res.json())
-    .then(data => {
-        alert("Server response: " + data.message);
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Server error");
+        }
+        return response.json();
     })
-    .catch(err => console.log(err));
+    .then(data => {
+        console.log("Server response:", data);
+
+        if (data.status === "success") {
+            // redirect to download route
+            window.location.href = "/download";
+        } else {
+            alert(data.message || "Something went wrong");
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("Failed to generate PDF");
+    });
 }

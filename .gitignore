@@ -1,0 +1,59 @@
+# ----------------------
+# 🐍 Python
+# ----------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+
+# ----------------------
+# 📦 Distribution / Packaging
+# ----------------------
+build/
+dist/
+*.egg-info/
+*.egg
+
+# ----------------------
+# 🧠 IDE / Editor
+# ----------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ----------------------
+# 📄 LaTeX / PyLaTeX Intermediate Files
+# ----------------------
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.tex
+
+# ----------------------
+# 📂 Storage Folder (Generated Files)
+# ----------------------
+storage/*
+!storage/.gitkeep
+*.pdf
+
+# ----------------------
+# 🗄 OS Files
+# ----------------------
+.DS_Store
+Thumbs.db
+
+# ----------------------
+# 🔐 Environment Files
+# ----------------------
+.env
+

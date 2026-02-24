@@ -9,7 +9,11 @@
     }
   },
   "tags": {
-    "question": "\\question",
-    "header": "\\header"
+    "question":{
+      "basic":"\\question"
+    },
+    "header":{
+      "basic":"\\header"
+    }
   }
 }
