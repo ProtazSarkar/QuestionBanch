@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question Input</title>
+    <link rel="stylesheet" href="{{url_for ('static', filename='css/style.css')}}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Add Questions</h2>
+
+    <div class="input-group">
+        <input type="text" id="questionBox" placeholder="Enter your question here...">
+        <button class="btn-add" onclick="addQuestion()">Add</button>
+    </div>
+
+    <div class="actions">
+        <button class="btn-send" onclick="sendAll()">Send All to Server</button>
+    </div>
+
+    <div class="preview-section">
+        <h3>Preview</h3>
+        <ul id="preview"></ul>
+    </div>
+</div>
+
+<script src="{{url_for ('static', filename='js/index.js')}}"></script>
+
+</body>
+</html>
